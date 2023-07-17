@@ -1,0 +1,14 @@
+package cor;
+
+public class InfoLogprocessor extends LogProcessor{
+    public InfoLogprocessor(LogProcessor logProcessor) {
+        super(logProcessor);
+    }
+    public void log(int logLevel, String message) {
+        if(logLevel == INFO){
+            System.out.println("INFO "+message);
+        } else {
+            super.log(logLevel, message);
+        }
+    }
+}
