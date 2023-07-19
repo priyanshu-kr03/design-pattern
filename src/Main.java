@@ -4,6 +4,7 @@ import cor.NotFoundLogProcessor;
 import cor.NullPointLogProcessor;
 import factory.shape.Shape;
 import factory.ShapeFactory;
+import singleton.Singleton;
 
 import java.util.Scanner;
 
@@ -34,10 +35,13 @@ public class Main {
         // Shape shape = shapeFactory.getShape(input);
         // shape.draw();
 
-        // Chain Of Responsibilty
+        // Chain Of Responsibility
         // LogProcessor logProcessor = new InfoLogprocessor(new NotFoundLogProcessor(new NullPointLogProcessor(null)));
         // logProcessor.log(LogProcessor.NULL_POINT, "Null Pointer ");
         // logProcessor.log(LogProcessor.NOT_FOUND, "Not Found");
         // logProcessor.log(LogProcessor.INFO, "Info");
+
+        // Singleton
+        // Singleton.getInstance("Here is example of singleton design pattern");
     }
 }
