@@ -1,3 +1,7 @@
+import command.Invoker;
+import command.commands.LightOffCommand;
+import command.commands.LightOnCommand;
+import command.receiver.Light;
 import cor.InfoLogprocessor;
 import cor.LogProcessor;
 import cor.NotFoundLogProcessor;
@@ -36,5 +40,15 @@ public class Main {
 
         // Singleton
         // Singleton.getInstance("Here is example of singleton design pattern");
+
+        // Command Design pattern
+        Invoker invoker = new Invoker();
+        Light light=new Light();
+        LightOnCommand lightOnCommand = new LightOnCommand(light);
+        invoker.setCommand(lightOnCommand);
+        invoker.execute();
+        LightOffCommand lightOffCommand = new LightOffCommand(light);
+        invoker.setCommand(lightOffCommand);
+        invoker.execute();
     }
 }
