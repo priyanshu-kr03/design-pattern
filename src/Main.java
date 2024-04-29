@@ -38,7 +38,7 @@ public class Main {
          String input = scanner.nextLine();
          ShapeFactory shapeFactory = new ShapeFactory();
          Shape shape = shapeFactory.getShape(input);
-         shape.draw(); */
+         shape.draw();*/
 
         /* -------------------------------- Chain Of Responsibility ----------------------------------------------- */
          /*LogProcessor logProcessor = new InfoLogprocessor(new NotFoundLogProcessor(new NullPointLogProcessor(null)));
@@ -62,9 +62,13 @@ public class Main {
         /* --------------------------------Strategy Design Pattern-------------------------------------------------- */
         // Suppose there is a two class B and C extending A. Now if both of them override a function from A.
         // And both functions are same. Ths is violating code usability. That's why we use strategy design pattern
-        Vehicle vehicle = new SportsCar(new SportsCarStrategy());
+        /* Vehicle vehicle = new SportsCar(new SportsCarStrategy());
         vehicle.drive();
         Vehicle thar = new Thar(new OffRoadStrategy());
-        thar.drive();
+        thar.drive(); */
+
+        /* ------------------------------------ NUll Object Pattern ------------------------------------------------ */
+        // Problem - How to handle null value
+        /* Added a NUllShape in factory design pattern if input is wrong then default behaviour will be returned*/
     }
 }

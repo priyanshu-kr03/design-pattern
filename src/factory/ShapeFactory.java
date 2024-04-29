@@ -1,9 +1,6 @@
 package factory;
 
-import factory.shape.Circle;
-import factory.shape.Rectangle;
-import factory.shape.Shape;
-import factory.shape.Square;
+import factory.shape.*;
 
 public class ShapeFactory {
     public Shape getShape(String input) {
@@ -11,7 +8,7 @@ public class ShapeFactory {
             case "Rectangle" -> new Rectangle();
             case "Circle" -> new Circle();
             case "Square" -> new Square();
-            default -> null;
+            default -> new  NullShape();
         };
     }
 }
