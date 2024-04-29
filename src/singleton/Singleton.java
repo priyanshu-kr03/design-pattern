@@ -1,5 +1,8 @@
 package singleton;
 
+enum singletonEnum {
+    S
+}
 public class Singleton {
     // by adding volatile we ensure all the threads who are using instance must be updated
     private static volatile Singleton instance;

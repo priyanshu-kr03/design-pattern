@@ -6,49 +6,65 @@ import cor.InfoLogprocessor;
 import cor.LogProcessor;
 import cor.NotFoundLogProcessor;
 import cor.NullPointLogProcessor;
+import decorator.pizza.BasePizza;
+import decorator.pizza.VegLoaded;
+import decorator.toppings.ExtraCheese;
+import decorator.toppings.Mushrooms;
+import decorator.toppings.OliveOil;
 import factory.shape.Shape;
 import factory.ShapeFactory;
 import singleton.Singleton;
+import strategy.driveStrategy.OffRoadStrategy;
+import strategy.driveStrategy.SportsCarStrategy;
+import strategy.vehicle.SportsCar;
+import strategy.vehicle.Thar;
+import strategy.vehicle.Vehicle;
 
 import java.util.Scanner;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
         // Press Alt+Enter with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
 
-        // Decorator Design Pattern
-        // BasePizza basePizza = new Mushrooms(new ExtraCheese(new OliveOil(new VegLoaded())));
-        // System.out.println("Total Cost");
-        // System.out.println(basePizza.cost());
+        /* -------------------------------- Decorator Design Pattern ---------------------------------------------- */
+        /*  BasePizza basePizza = new Mushrooms(new ExtraCheese(new OliveOil(new VegLoaded())));
+         System.out.println("Total Cost");
+         System.out.println(basePizza.cost()); */
 
-        // Factory Design Pattern
-        // System.out.println("Enter Shape");
-        // Scanner scanner = new Scanner(System.in);
-        // String input = scanner.nextLine();
-        // ShapeFactory shapeFactory = new ShapeFactory();
-        // Shape shape = shapeFactory.getShape(input);
-        // shape.draw();
+        /* --------------------------------- Factory Design Pattern ----------------------------------------------- */
+         /*System.out.println("Enter Shape");
+         Scanner scanner = new Scanner(System.in);
+         String input = scanner.nextLine();
+         ShapeFactory shapeFactory = new ShapeFactory();
+         Shape shape = shapeFactory.getShape(input);
+         shape.draw(); */
 
-        // Chain Of Responsibility
-        // LogProcessor logProcessor = new InfoLogprocessor(new NotFoundLogProcessor(new NullPointLogProcessor(null)));
-        // logProcessor.log(LogProcessor.NULL_POINT, "Null Pointer ");
-        // logProcessor.log(LogProcessor.NOT_FOUND, "Not Found");
-        // logProcessor.log(LogProcessor.INFO, "Info");
+        /* -------------------------------- Chain Of Responsibility ----------------------------------------------- */
+         /*LogProcessor logProcessor = new InfoLogprocessor(new NotFoundLogProcessor(new NullPointLogProcessor(null)));
+         logProcessor.log(LogProcessor.NULL_POINT, "Null Pointer ");
+         logProcessor.log(LogProcessor.NOT_FOUND, "Not Found");
+         logProcessor.log(LogProcessor.INFO, "Info"); */
 
-        // Singleton
-        // Singleton.getInstance("Here is example of singleton design pattern");
+         /* --------------------------------Singleton-------------------------------------------------------------- */
+        /* Singleton.getInstance("Here is example of singleton design pattern");/*
 
-        // Command Design pattern
-        Invoker invoker = new Invoker();
+        /* -------------------------------- Command Design pattern--------------------------------------------------*/
+        /* Invoker invoker = new Invoker();
         Light light=new Light();
         LightOnCommand lightOnCommand = new LightOnCommand(light);
         invoker.setCommand(lightOnCommand);
         invoker.execute();
         LightOffCommand lightOffCommand = new LightOffCommand(light);
         invoker.setCommand(lightOffCommand);
-        invoker.execute();
+        invoker.execute();*/
+
+        /* --------------------------------Strategy Design Pattern-------------------------------------------------- */
+        // Suppose there is a two class B and C extending A. Now if both of them override a function from A.
+        // And both functions are same. Ths is violating code usability. That's why we use strategy design pattern
+        Vehicle vehicle = new SportsCar(new SportsCarStrategy());
+        vehicle.drive();
+        Vehicle thar = new Thar(new OffRoadStrategy());
+        thar.drive();
     }
 }

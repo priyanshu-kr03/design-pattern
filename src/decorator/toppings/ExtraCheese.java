@@ -1,6 +1,6 @@
 package decorator.toppings;
 
-import decorator.BasePizza;
+import decorator.pizza.BasePizza;
 
 public class ExtraCheese extends ToppingDecorator{
 

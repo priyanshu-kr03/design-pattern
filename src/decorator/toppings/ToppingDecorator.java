@@ -1,6 +1,6 @@
 package decorator.toppings;
 
-import decorator.BasePizza;
+import decorator.pizza.BasePizza;
 
 public abstract class ToppingDecorator extends BasePizza {
 }

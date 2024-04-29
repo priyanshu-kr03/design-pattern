@@ -1,7 +1,5 @@
 package decorator.pizza;
 
-import decorator.BasePizza;
-
 public class VegLoaded extends BasePizza {
 
     @Override
