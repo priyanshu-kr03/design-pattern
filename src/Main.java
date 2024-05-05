@@ -1,3 +1,4 @@
+import builder.Student;
 import command.Invoker;
 import command.commands.LightOffCommand;
 import command.commands.LightOnCommand;
@@ -59,7 +60,7 @@ public class Main {
         invoker.setCommand(lightOffCommand);
         invoker.execute();*/
 
-        /* --------------------------------Strategy Design Pattern-------------------------------------------------- */
+        /* -------------------------------- Strategy Design Pattern ------------------------------------------------- */
         // Suppose there is a two class B and C extending A. Now if both of them override a function from A.
         // And both functions are same. Ths is violating code usability. That's why we use strategy design pattern
         /* Vehicle vehicle = new SportsCar(new SportsCarStrategy());
@@ -67,8 +68,13 @@ public class Main {
         Vehicle thar = new Thar(new OffRoadStrategy());
         thar.drive(); */
 
-        /* ------------------------------------ NUll Object Pattern ------------------------------------------------ */
+        /* ------------------------------------ NUll Object Pattern ------------------------------------------------- */
         // Problem - How to handle null value
         /* Added a NUllShape in factory design pattern if input is wrong then default behaviour will be returned*/
+
+        /* ------------------------------------ Builder Design Pattern ----------------------------------------------- */
+        Student student = Student.builder().setFathersName("M.k.Ojha").setName("Priyanshu").setRoll(2).setStream("PCM").build();
+        System.out.println(student.getName()+ "\n"+ student.getFathersName()+ "\n"+ student.getRoll()+ "\n"+ student.getStream());
+
     }
 }
