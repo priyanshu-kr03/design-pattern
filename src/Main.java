@@ -1,3 +1,7 @@
+import bridge.message.Message;
+import bridge.message.QRMessage;
+import bridge.sender.EmailNotifcation;
+import bridge.sender.SMSNotification;
 import builder.Student;
 import command.Invoker;
 import command.commands.LightOffCommand;
@@ -73,8 +77,12 @@ public class Main {
         /* Added a NUllShape in factory design pattern if input is wrong then default behaviour will be returned*/
 
         /* ------------------------------------ Builder Design Pattern ----------------------------------------------- */
-        Student student = Student.builder().setFathersName("M.k.Ojha").setName("Priyanshu").setRoll(2).setStream("PCM").build();
-        System.out.println(student.getName()+ "\n"+ student.getFathersName()+ "\n"+ student.getRoll()+ "\n"+ student.getStream());
+//        Student student = Student.builder().setFathersName("M.k.Ojha").setName("Priyanshu").setRoll(2).setStream("PCM").build();
+//        System.out.println(student.getName()+ "\n"+ student.getFathersName()+ "\n"+ student.getRoll()+ "\n"+ student.getStream());
+
+        /*----------------------------------------Bridge Design Pattern----------------------------------------------*/
+//        QRMessage message = new QRMessage(new SMSNotification());
+//        message.sendMessage();
 
     }
 }
